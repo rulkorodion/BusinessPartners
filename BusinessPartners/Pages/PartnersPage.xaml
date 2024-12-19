@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
-        <ScrollViewer Background="#FFA2AF83" Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <ScrollViewer Background="#FFFFFF" Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Name="MainStackPanel" Orientation="Vertical" Margin="10">
             </StackPanel>
         </ScrollViewer>

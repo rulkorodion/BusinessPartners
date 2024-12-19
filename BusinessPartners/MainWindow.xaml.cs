@@ -38,5 +38,15 @@ namespace BusinessPartners
                 Application.Current.Shutdown();
             }
         }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            if (!(e.Content is Page page)) return;
+
+            if (page is Pages.PartnersPage)
+                ButtonBack.Visibility = Visibility.Hidden;
+            else
+                ButtonBack.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -69,35 +69,23 @@ namespace BusinessPartners.Pages
                         return;
                     }
 
-                    var productType = context.ProductType.FirstOrDefault(pt => pt.ProductTypeID == product.ProductTypeID);
-                    if (productType == null)
-                    {
-                        MessageBox.Show("Тип продукта не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
-                    }
-                    double coefficient = (double)productType.Coefficient;
-
-                    var materialType = context.MaterialType.FirstOrDefault();
-                    if (materialType == null)
+                    int productTypeId = product.ProductTypeID;
+                    int materialTypeId = context.MaterialType.FirstOrDefault()?.MaterialTypeID ?? -1;
+                    if (materialTypeId == -1)
                     {
                         MessageBox.Show("Тип материала не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
-                    double defectRate = (double)materialType.DefectRate;
 
-                    // Примерные параметры продукции, так как точных в задании предоставлено не было (например, длина и ширина)
                     double param1 = 1.5;
                     double param2 = 2.0;
 
-                    // Рассчитываем необходимое количество материала
                     int requiredMaterial = MaterialCalculator.CalculateMaterialRequirement(
-                        productTypeId: product.ProductTypeID,
-                        materialTypeId: materialType.MaterialTypeID,
+                        productTypeId: productTypeId,
+                        materialTypeId: materialTypeId,
                         quantity: selectedRow.Quantity,
                         param1: param1,
-                        param2: param2,
-                        coefficient: coefficient,
-                        defectRate: defectRate);
+                        param2: param2);
 
                     if (requiredMaterial == -1)
                     {

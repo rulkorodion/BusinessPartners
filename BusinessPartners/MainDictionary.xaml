@@ -6,8 +6,9 @@
         <Setter Property="FontFamily" Value="Tahoma"/>
         <Setter Property="Width" Value="100"/>
         <Setter Property="FontSize" Value="12pt"/>
-        <Setter Property="Background" Value="#FFFFD79C"/>
+        <Setter Property="Background" Value="#67BA80"/>
         <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
 
 

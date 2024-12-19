@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessPartners"
         mc:Ignorable="d"
-        Title="Партнеры" Height="450" Width="800" Background="#FFF6F9D1">
+        Title="Партнеры" Height="450" Width="800" Background="#F4E8D3">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Frame Grid.Row="1" Name="MainFrame" Source="Pages/PartnersPage.xaml"/>
+        <Frame Grid.Row="1" Name="MainFrame" Source="Pages/PartnersPage.xaml" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated" />
 
 
         <Button Name="ButtonBack" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Назад" Margin="10,0,0,0" Click="ButtonBack_Click"/>
-        <Button Name="ButtonExit" Content="Выход" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Click="ButtonExit_Click"/>
+        <Button Name="ButtonExit" Content="Выход" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Click="ButtonExit_Click" />
         <Image Grid.Row="0" Source="/Resources/logoUP.png" Height="45" Width="40"/>
     </Grid>
 
